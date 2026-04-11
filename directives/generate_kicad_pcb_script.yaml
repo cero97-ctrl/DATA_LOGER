@@ -1,0 +1,28 @@
+goal: "Generar y validar archivos de PCB automatizados usando la API de KiCad 8.0."
+required_inputs:
+  - name: "project_name"
+    description: "Nombre del archivo de salida (ej. DATA_LOGER_v1.kicad_pcb)"
+  - name: "components_list"
+    description: "Lista de footprints y netlist básica"
+steps:
+  - step: 1
+    action: "Ejecutar inicialización de placa"
+    tool: "execution/kicad_pcb_automation.py"
+    args: ["hardware/${project_name}.kicad_pcb"]
+  - step: 2
+    action: "Ejecutar ruteo automático basado en A*"
+    tool: "execution/kicad_pcb_automation.py"
+    args: ["hardware/${project_name}.kicad_pcb"]
+  - step: 3
+    action: "Generar archivos de fabricación (Gerbers)"
+    tool: "kicad-cli" # Uso directo de CLI según ADN
+    args: ["pcb", "export", "gerber", "--output", "hardware/gerbers/", "hardware/${project_name}.kicad_pcb"]
+expected_outputs:
+  - "Archivo .kicad_pcb generado en el directorio hardware/"
+  - "Carpeta de Gerbers lista para validación técnica"
+edge_cases:
+  - condition: "Error de carga de pcbnew"
+    protocol: "Verificar que PYTHONPATH incluya /usr/lib/python3/dist-packages"
+  - condition: "Fallo de VECTOR2I"
+    protocol: "Asegurar que las coordenadas sean enteros (nanómetros)"
+version: "2.0.0-DATA_LOGER"

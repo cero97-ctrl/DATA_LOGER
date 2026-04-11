@@ -1,0 +1,29 @@
+goal: "Diseñar el layout físico de la PCB en KiCad asegurando integridad de señal, gestión térmica y cumplimiento de normas de aislamiento."
+required_inputs:
+  - name: "schematic_netlist"
+    description: "Netlist exportada en la Fase 2 (.net)"
+  - name: "design_constraints"
+    description: "Reglas de diseño especificadas en docs/DATA_LOGER.md"
+steps:
+  - step: 1
+    description: "Definir el Board Outline y el Stackup de la placa (2 capas sugeridas). Configurar las Net Classes: Señal (0.3mm), Power (0.5mm), High Current/USB (2.0mm)."
+    tool: "pcb_editor_config"
+  - step: 2
+    description: "Ubicación estratégica de componentes (Placement): Separar etapa de potencia (TPS5430) de la antena del ESP32-S3. Orientar conectores JST hacia los bordes."
+    tool: "pcb_editor_placement"
+  - step: 3
+    description: "Ruteo de potencia y gestión térmica: Implementar vías térmicas en el pad expuesto del TPS5430 y asegurar planos de tierra (GND) sólidos."
+    tool: "pcb_editor_routing"
+  - step: 4
+    description: "Ruteo de señales críticas: Aplicar length matching en buses USB, SD y RS485. Mantener aislamiento (creepage) de 4mm en zonas de relés."
+    tool: "pcb_editor_routing"
+  - step: 5
+    description: "Finalización: Agregar serigrafía personalizada, logos y realizar inspección 3D final para verificar colisiones mecánicas."
+    tool: "pcb_visualizer"
+expected_outputs:
+  - "Archivo de diseño de PCB (.kicad_pcb)"
+  - "Archivos Gerber y de taladros para fabricación"
+edge_cases:
+  - "Interferencia electromagnética (EMI) del inductor del Buck sobre el transceptor RS485."
+  - "Insuficiente disipación térmica en el regulador bajo carga máxima de relés."
+  - "Violación de distancias de seguridad en las pistas de los contactos de los relés."

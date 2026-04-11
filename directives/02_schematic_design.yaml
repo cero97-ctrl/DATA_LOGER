@@ -1,0 +1,28 @@
+goal: "Traducir la arquitectura de sistema a un esquema técnico detallado en KiCad, garantizando la integridad de potencia y señal."
+required_inputs:
+  - name: "project_requirements"
+    description: "Contenido del archivo docs/DATA_LOGER.md"
+  - name: "system_architecture"
+    description: "Pinout y selección de componentes definidos en la Fase 1"
+steps:
+  - step: 1
+    description: "Configurar el proyecto en KiCad y establecer las librerías de símbolos necesarias (ESP32-S3, TPS5430, etc.)."
+    tool: "kicad_project_init"
+  - step: 2
+    description: "Diseñar la etapa de potencia: Entrada 12V -> Filtro EMI -> TPS5430 (5V) -> LDO (3.3V) con sus respectivos capacitores de desacoplo."
+    tool: "schematic_editor"
+  - step: 3
+    description: "Implementar el bloque del MCU: ESP32-S3 con circuitería de auto-reset, USB-C y condensadores de bypass para cada riel de VDD."
+    tool: "schematic_editor"
+  - step: 4
+    description: "Integrar periféricos: RS485 (SP3485), RTC (DS3231), SD Card (SPI), Sensores (OneWire) y Drivers para Relés."
+    tool: "schematic_editor"
+  - step: 5
+    description: "Ejecutar ERC (Electrical Rules Check) y generar la Netlist para la PCB."
+    tool: "kicad_erc_validator"
+expected_outputs:
+  - "Archivos de proyecto KiCad (.kicad_pro, .kicad_sch)"
+  - "Reporte de ERC sin errores críticos"
+edge_cases:
+  - "Conflicto de pines compartidos (GPIO strapping pins) en el ESP32-S3 durante el arranque."
+  - "Falta de resistencias de pull-up necesarias para I2C y OneWire."

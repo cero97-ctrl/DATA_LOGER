@@ -1,0 +1,21 @@
+goal: "Definir el diagrama de bloques y la selección preliminar de componentes para el Data Logger IoT."
+required_inputs:
+  - name: "project_requirements"
+    description: "Contenido del archivo docs/DATA_LOGER.md"
+steps:
+  - step: 1
+    description: "Analizar requerimientos de potencia y proponer reguladores para conversión 12V a 5V/3.3V."
+    tool: "brainstorming"
+  - step: 2
+    description: "Seleccionar componentes específicos para RTC, MicroSD, RS485 y Relés."
+    tool: "component_selector"
+  - step: 3
+    description: "Generar el diagrama de bloques en formato Mermaid o texto estructurado."
+    tool: "diagram_generator"
+expected_outputs:
+  - "Lista de componentes principales (BOM preliminar)"
+  - "Esquema de bloques de alimentación"
+  - "Mapeo de pines (Pinout) inicial del ESP32-S3"
+edge_cases:
+  - "Incompatibilidad de niveles lógicos entre sensores y ESP32 (3.3V vs 5V)"
+  - "Consumo excesivo en el riel de 3.3V por parte de la SD"

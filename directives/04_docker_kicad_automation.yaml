@@ -1,0 +1,17 @@
+goal: "Ejecutar tareas de KiCad (ERC, DRC, Exportación) de forma aislada utilizando un sandbox de Docker."
+required_inputs:
+  - name: "pcb_file"
+    description: "Ruta al archivo .kicad_pcb o .kicad_sch en la carpeta hardware/"
+  - name: "task_type"
+    description: "Tipo de tarea a realizar: 'erc', 'drc', 'gerber', 'netlist'"
+steps:
+  - step: 1
+    description: "Verificar la existencia de Docker en el sistema y la imagen de KiCad requerida."
+    tool: "terminal_check"
+  - step: 2
+    description: "Ejecutar el script execution/run_kicad_sandbox.py pasando los parámetros del proyecto."
+    tool: "kicad_sandbox_runner"
+expected_outputs:
+  - "Reportes de validación o archivos de fabricación en .tmp/"
+edge_cases:
+  - "Docker no iniciado: El script debe detectar el fallo y notificar al usuario."
