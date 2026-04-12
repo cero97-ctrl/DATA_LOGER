@@ -12,7 +12,9 @@ def _setup_kicad_env():
         "/usr/lib/python3/dist-packages",
         "/usr/local/lib/python3/dist-packages",
         "/usr/lib/python3/site-packages",
+        "/usr/lib/python3/dist-packages/kicad",
         "/usr/lib/kicad/plugins",
+        "/usr/lib/x86_64-linux-gnu/kicad/plugins", # Ruta común en instalaciones limpias
         # Búsqueda específica para KiCad 8 en Noble
         "/usr/share/kicad/plugins/"
     ]
