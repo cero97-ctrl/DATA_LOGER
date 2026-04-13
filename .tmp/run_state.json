@@ -1,7 +1,7 @@
 {
     "project_name": "DATA_LOGER_IOT",
     "current_phase": "FIRMWARE_DEVELOPMENT",
-    "last_step_completed": 36,
+    "last_step_completed": 38,
     "history": [
         "Fase 1 completada: Definición de arquitectura de potencia, selección de componentes y mapeo de pines.",
         "Fase 2 iniciada: Creación de la directiva de diseño de esquemático.",
@@ -132,6 +132,9 @@
         "Confirmación: Estructura de directorios firmware/ detectada y validada en el host ZETA.",
         "Saneamiento: Eliminado main.c redundante en la raíz de firmware; estructura ESP-IDF consolidada en main/.",
         "Limpieza profunda: Eliminados artefactos temporales y plantillas de las carpetas .gemini/ y .tmp/ para evitar confusión.",
-        "Hito: Estructura de componentes firmware/main/ verificada físicamente en ZETA (main.c y pinout.h presentes)."
+        "Hito: Estructura de componentes firmware/main/ verificada físicamente en ZETA (main.c y pinout.h presentes).",
+        "Paso 37 ejecutado: Construcción de la imagen pcb_sandbox usando el Dockerfile en .gemini/ para validación determinista de C.",
+        "Hito: Imagen Docker 'pcb_sandbox' verificada y operativa. El entorno build-essential está listo para pruebas de compilación.",
+        "Paso 38 ejecutado: Validación exitosa de pinout.h mediante compilación real en el sandbox. Sin errores de sintaxis detectados."
     ]
 }

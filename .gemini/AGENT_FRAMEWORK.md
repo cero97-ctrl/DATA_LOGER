@@ -10,7 +10,7 @@ Para garantizar la reproducibilidad y evitar conflictos de dependencias, se reco
 
 1.  **Crear el entorno:**
     ```bash
-    conda create --name pcb_env python=3.10 -y
+    conda create --name pcb_env python=3.12 -y
     ```
 
 2.  **Activar el entorno:**
@@ -23,7 +23,14 @@ Para garantizar la reproducibilidad y evitar conflictos de dependencias, se reco
     pip install -r requirements.txt
     ```
 
-4.  **Visualizar entornos disponibles:**
+4. **Docker Sandbox (Para C/C++ y Hardware Toolchains):**
+   Para ejecutar código C de forma segura y determinista:
+   ```bash
+   # La imagen debe incluir build-essential y el compilador cruzado para ESP32-S3
+   docker build -t pcb_sandbox ./docker/
+   ```
+
+5.  **Visualizar entornos disponibles:**
     ```bash
     conda env list
     ```

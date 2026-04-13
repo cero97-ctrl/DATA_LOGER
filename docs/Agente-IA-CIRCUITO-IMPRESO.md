@@ -10,6 +10,7 @@ Este documento extrae la lógica técnica y los componentes esenciales para repl
     - `kicad-cli`: Utilizado para la generación de archivos de fabricación vía terminal.
     - `pcb-tools-extension`: Para la manipulación avanzada de archivos Gerber.
     - `python-pathfinding`: Implementación del algoritmo A* para el trazado de rutas.
+    - `build-essential`: GCC, G++, y Make para validación de firmware en el sandbox.
     - `pcb2gcode`: Conversión de Gerber a instrucciones G-Code (v1.1.4 para compatibilidad con Ubuntu 22.04).
 - **Gestión de Volúmenes:** Mapeo de `/mnt/out` para persistencia de archivos entre el Host y el Sandbox de ejecución.
 
