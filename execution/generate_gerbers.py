@@ -18,8 +18,16 @@ def export_gerbers(pcb_path, output_dir):
             pcb_path
         ]
         subprocess.run(cmd, check=True)
+
+        # Exportar taladros (Drill) sincronizados
+        drill_cmd = [
+            "kicad-cli", "pcb", "export", "drill",
+            "--output", output_dir,
+            pcb_path
+        ]
+        subprocess.run(drill_cmd, check=True)
         
-        files = [f for f in os.listdir(output_dir) if f.endswith('.gbr')]
+        files = [f for f in os.listdir(output_dir) if f.endswith(('.gbr', '.drl'))]
         print(json.dumps({
             "status": "SUCCESS",
             "files_count": len(files),
