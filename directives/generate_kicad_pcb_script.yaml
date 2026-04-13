@@ -16,7 +16,7 @@ steps:
   - step: 3
     action: "Generar archivos de fabricación (Gerbers)"
     tool: "kicad-cli" # Uso directo de CLI según ADN
-    args: ["pcb", "export", "gerber", "--output", "hardware/gerbers/", "hardware/${project_name}.kicad_pcb"]
+    args: ["pcb", "export", "gerbers", "--output", "hardware/gerbers/", "--layers", "F.Cu,B.Cu,F.SilkS,B.SilkS,F.Mask,B.Mask,Edge.Cuts", "hardware/${project_name}.kicad_pcb"]
 expected_outputs:
   - "Archivo .kicad_pcb generado en el directorio hardware/"
   - "Carpeta de Gerbers lista para validación técnica"

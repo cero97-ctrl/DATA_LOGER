@@ -1,0 +1,4 @@
+Item,Quantity,Reference(s),Value,Footprint
+1,1,REF**,ESP32-S3-WROOM-1,ESP32-S3-WROOM-1
+2,1,REF**,JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical,Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical
+3,1,REF**,TI_SO-PowerPAD-8,Package_SO:TI_SO-PowerPAD-8
