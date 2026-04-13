@@ -1,7 +1,7 @@
 {
     "project_name": "DATA_LOGER_IOT",
     "current_phase": "FIRMWARE_DEVELOPMENT",
-    "last_step_completed": 32,
+    "last_step_completed": 36,
     "history": [
         "Fase 1 completada: Definición de arquitectura de potencia, selección de componentes y mapeo de pines.",
         "Fase 2 iniciada: Creación de la directiva de diseño de esquemático.",
@@ -127,6 +127,11 @@
         "Hito: Reconstrucción manual de DATA_LOGER_IOT.kicad_pcb completada con éxito. Archivo saneado y anotado.",
         "QA Final: Validación de integridad BOM-Gerber ejecutada con éxito (U1, U2, J1 verificados).",
         "Empaquetado Final: Ejecutado finalize_fabrication.py para consolidar el ZIP de producción libre de archivos obsoletos.",
-        "Hito: Finalizada etapa de Hardware. Iniciando Fase 5: Estructura base del firmware (ESP-IDF) para ESP32-S3."
+        "Hito: Finalizada etapa de Hardware. Iniciando Fase 5: Estructura base del firmware (ESP-IDF) para ESP32-S3.",
+        "Acción: Generada la estructura de carpetas de firmware y archivos CMake iniciales.",
+        "Confirmación: Estructura de directorios firmware/ detectada y validada en el host ZETA.",
+        "Saneamiento: Eliminado main.c redundante en la raíz de firmware; estructura ESP-IDF consolidada en main/.",
+        "Limpieza profunda: Eliminados artefactos temporales y plantillas de las carpetas .gemini/ y .tmp/ para evitar confusión.",
+        "Hito: Estructura de componentes firmware/main/ verificada físicamente en ZETA (main.c y pinout.h presentes)."
     ]
 }
