@@ -1,7 +1,7 @@
 {
     "project_name": "DATA_LOGER_IOT",
     "current_phase": "FIRMWARE_DEVELOPMENT",
-    "last_step_completed": 38,
+    "last_step_completed": 41,
     "history": [
         "Fase 1 completada: Definición de arquitectura de potencia, selección de componentes y mapeo de pines.",
         "Fase 2 iniciada: Creación de la directiva de diseño de esquemático.",
@@ -135,6 +135,10 @@
         "Hito: Estructura de componentes firmware/main/ verificada físicamente en ZETA (main.c y pinout.h presentes).",
         "Paso 37 ejecutado: Construcción de la imagen pcb_sandbox usando el Dockerfile en .gemini/ para validación determinista de C.",
         "Hito: Imagen Docker 'pcb_sandbox' verificada y operativa. El entorno build-essential está listo para pruebas de compilación.",
-        "Paso 38 ejecutado: Validación exitosa de pinout.h mediante compilación real en el sandbox. Sin errores de sintaxis detectados."
+        "Paso 38 ejecutado: Validación exitosa de pinout.h mediante compilación real en el sandbox. Sin errores de sintaxis detectados.",
+        "Paso 39 ejecutado: Implementación del driver UART en modo RS485 Half-Duplex con control automático de dirección (DE/RE).",
+        "Planificación: Definido el hito de 'Hardware-in-the-Loop'. El grabado se realizará tras completar la inicialización de la SD Card y el RTC.",
+        "Paso 40 ejecutado: Conexión física verificada. ESP32-S3 conectado vía USB-UART al host ZETA para flashing y monitoreo.",
+        "Paso 41 ejecutado: El dispositivo ha sido detectado en /dev/ttyACM0. Implementada la inicialización del bus SPI y el montaje de la tarjeta SD en main.c."
     ]
 }
