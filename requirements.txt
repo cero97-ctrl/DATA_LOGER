@@ -1,3 +1,4 @@
 pcb-tools-extension
 pathfinding
 numpy
+pyserial
