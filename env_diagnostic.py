@@ -11,7 +11,7 @@ def run_diagnostic():
     Valida el entorno de desarrollo, la conexión con el hardware y el sandbox.
     """
     print("=" * 60)
-    print("ENVIRONMENT DIAGNOSTIC REPORT - DATA_LOGER_IOT")
+    print("ENVIRONMENT DIAGNOSTIC REPORT - DETERMINISTIC SENSOR")
     print("=" * 60)
 
     # --- CORE ---
@@ -65,14 +65,40 @@ def run_diagnostic():
 
     # --- CRITICAL PACKAGES ---
     print(f"\n--- PYTHON PACKAGES ---")
-    for pkg in ["serial", "numpy"]:
+    for pkg in ["serial", "numpy", "pcbnew"]:
         try:
             __import__(pkg)
             print(f"{pkg:12}: INSTALLED")
         except ImportError:
             print(f"{pkg:12}: MISSING")
 
+    # --- FILES & PERMISSIONS ---
+    print(f"\n--- FILESYSTEM ---")
+    cwd = os.getcwd()
+    write_perm = os.access(cwd, os.W_OK)
+    print(f"CWD:            {cwd}")
+    print(f"Write Access:   {'OK' if write_perm else 'DENIED'}")
+    
+    # --- NETWORK & TOOLS ---
+    print(f"\n--- NETWORK & TOOLS ---")
+    tools = ["git", "curl", "kicad-cli"]
+    for tool in tools:
+        path = shutil.which(tool)
+        print(f"{tool:12}: {'FOUND (' + path + ')' if path else 'NOT FOUND'}")
+    
+    try:
+        # Test conectividad rápida
+        socket_test = subprocess.run(
+            ["ping", "-c", "1", "8.8.8.8"], 
+            capture_output=True, timeout=2
+        )
+        print(f"Internet:       {'CONNECTED' if socket_test.returncode == 0 else 'OFFLINE'}")
+    except Exception:
+        print(f"Internet:       CHECK FAILED")
+
     print("\n" + "=" * 60)
+    print("Por favor, copia esta salida y pégala en el chat.")
+    print("=" * 60)
 
 if __name__ == "__main__":
     run_diagnostic()

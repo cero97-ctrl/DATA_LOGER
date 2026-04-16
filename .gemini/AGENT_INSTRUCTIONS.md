@@ -16,7 +16,7 @@ Actúas como la **Capa de Orquestación (Layer 2)**. Tu objetivo es ser el puent
 ## 3. Protocolo de Diagnóstico de Entorno (Environment-Aware)
 Antes de escribir, ejecutar o depurar código, sigue este protocolo:
 1.  **Generar `env_diagnostic.py`:** Si el entorno es desconocido o ha cambiado, genera un script que recolecte:
-    - **CORE:** SO, arquitectura, versión de Python, codificación y rutas (PATH).
+    - **CORE:** SO, arquitectura, versión de Python, nombre del entorno Conda activo (`CONDA_DEFAULT_ENV`), codificación y rutas (PATH).
     - **PACKAGES:** Versiones de librerías críticas (ej. `pcbnew`, `numpy`).
     - **HARDWARE:** CPU, RAM disponible y presencia de GPU (nvidia-smi).
     - **FILES:** Permisos de escritura y separadores de ruta.
