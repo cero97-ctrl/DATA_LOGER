@@ -1,4 +1,3 @@
-#### **1. Objetivo del Proyecto**
 Se llevará a cabo el diseño de un **Data Logger IoT de alto rendimiento** basado en el microcontrolador **ESP32-S3**. Este dispositivo estará destinado al monitoreo industrial y contará con una entrada de **12V DC**. El sistema integrará las siguientes capacidades técnicas:
 *   Sincronización temporal mediante un **RTC (DS3231)** con respaldo de batería.
 *   Almacenamiento masivo en **tarjeta microSD** vía protocolo SPI.
