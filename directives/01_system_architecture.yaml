@@ -1,7 +1,7 @@
 goal: "Definir el diagrama de bloques y la selección preliminar de componentes para el Data Logger IoT."
 required_inputs:
   - name: "project_requirements"
-    description: "Contenido del archivo docs/DATA_LOGER.md"
+    description: "Contenido del archivo docs/OBJETIVO.md"
 steps:
   - step: 1
     description: "Analizar requerimientos de potencia y proponer reguladores para conversión 12V a 5V/3.3V."

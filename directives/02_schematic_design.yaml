@@ -1,7 +1,7 @@
 goal: "Traducir la arquitectura de sistema a un esquema técnico detallado en KiCad, garantizando la integridad de potencia y señal."
 required_inputs:
   - name: "project_requirements"
-    description: "Contenido del archivo docs/DATA_LOGER.md"
+    description: "Contenido del archivo docs/OBJETIVO.md"
   - name: "system_architecture"
     description: "Pinout y selección de componentes definidos en la Fase 1"
 steps:

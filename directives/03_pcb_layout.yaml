@@ -3,7 +3,7 @@ required_inputs:
   - name: "schematic_netlist"
     description: "Netlist exportada en la Fase 2 (.net)"
   - name: "design_constraints"
-    description: "Reglas de diseño especificadas en docs/DATA_LOGER.md"
+    description: "Reglas de diseño especificadas en docs/OBJETIVO.md"
 steps:
   - step: 1
     description: "Definir el Board Outline y el Stackup de la placa (2 capas sugeridas). Configurar las Net Classes: Señal (0.3mm), Power (0.5mm), High Current/USB (2.0mm)."
