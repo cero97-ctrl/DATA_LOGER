@@ -3,6 +3,7 @@ import platform
 import os
 import subprocess
 import shutil
+import json
 import multiprocessing
 
 def run_diagnostic():
@@ -11,7 +12,16 @@ def run_diagnostic():
     Valida el entorno de desarrollo, la conexión con el hardware y el sandbox.
     """
     print("=" * 60)
-    print("ENVIRONMENT DIAGNOSTIC REPORT - DETERMINISTIC SENSOR")
+    project_name = 'UNKNOWN_PROJECT'
+    run_state_path = os.path.join(os.path.dirname(__file__), '.tmp', 'run_state.json')
+    if os.path.exists(run_state_path):
+        try:
+            with open(run_state_path, 'r') as f_rs:
+                rs_data = json.load(f_rs)
+                project_name = rs_data.get('project_name', 'UNKNOWN_PROJECT')
+        except json.JSONDecodeError:
+            pass
+    print(f"ENVIRONMENT DIAGNOSTIC REPORT - {project_name}")
     print("=" * 60)
 
     # --- CORE ---
