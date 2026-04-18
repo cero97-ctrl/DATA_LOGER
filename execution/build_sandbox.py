@@ -9,12 +9,12 @@ def build_sandbox():
     Construye la imagen Docker pcb_sandbox necesaria para la validación de firmware.
     """
     project_root = "/home/cero/MEGA/VS_CODE_WORKSPACE/DATA_LOGER"
-    dockerfile_path = os.path.join(project_root, ".gemini/Dockerfile")
-    context_path = os.path.join(project_root, ".gemini")
+    dockerfile_path = os.path.join(project_root, "docker/Dockerfile")
+    context_path = os.path.join(project_root, "docker")
     tag = "pcb_sandbox"
 
     if not os.path.exists(dockerfile_path):
-        print(json.dumps({"status": "error", "message": "Dockerfile no encontrado en .gemini/"}))
+        print(json.dumps({"status": "error", "message": "Dockerfile no encontrado en docker/"}))
         sys.exit(1)
 
     cmd = ["docker", "build", "-t", tag, "-f", dockerfile_path, context_path]
